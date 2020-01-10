@@ -11,7 +11,7 @@ const ShowCommitsScreen = ({navigation}) => {
     const [result , setResult] = useState(null);
 
     const getCommits = async (repository) => {
-        const commits = await githubCommit.get(`/${repository}/commits`);
+        const commits = await githubCommit.get(`/${repository}/commits/commits`);
         setResult(commits);
         console.log(commits.data[0]);
     }
@@ -32,7 +32,8 @@ const ShowCommitsScreen = ({navigation}) => {
                 renderItem={({item}) => {
                     return(
                         <ListItem
-                            title={item.commit.message}
+                            title={item.commit.author.name}
+                            subtitle={item.commit.message}
                         >
 
                         </ListItem>
