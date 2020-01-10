@@ -11,7 +11,7 @@ const ShowCommitsScreen = ({navigation}) => {
     const [result , setResult] = useState(null);
 
     const getCommits = async (repository) => {
-        const commits = await githubCommit.get(`/${repository}/commits/commits`);
+        const commits = await githubCommit.get(`/${repository}/commits?sha=commits`);
         setResult(commits);
         console.log(commits.data[0]);
     }
@@ -28,14 +28,22 @@ const ShowCommitsScreen = ({navigation}) => {
             <FlatList
                 style={styles.viewStyle}
                 data={result.data}
-                keyExtractor= {(result) => result.node_id} 
+                keyExtractor= {(result) => result.sha} 
                 renderItem={({item}) => {
                     return(
                         <ListItem
+                            containerStyle={{backgroundColor:'silver' , borderRadius:10 , borderColor:'red'}}
+                            contentContainerStyle
                             title={item.commit.author.name}
-                            subtitle={item.commit.message}
+                            titleStyle={{ color: 'black', fontWeight: 'bold' }}
+                            subtitle= {
+                                <View>
+                                    <Text>Commit:{item.sha}}</Text>
+                                    <Text>{item.commit.message}</Text>
+                                </View>
+                            }   
+                            bottomDivider
                         >
-
                         </ListItem>
 
                     )
