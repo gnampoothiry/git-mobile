@@ -9,7 +9,7 @@ const navigator = createStackNavigator({
   Index: IndexScreen,
   ShowCommits: ShowCommitsScreen
 },{
-  initialRouteName: 'Index',
+  initialRouteName: 'ShowCommits',
   defaultNavigationOptions:{
     title:'Github App'
   }
