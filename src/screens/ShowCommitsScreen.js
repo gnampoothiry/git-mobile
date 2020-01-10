@@ -7,13 +7,11 @@ import githubCommit from '../api/github-commits';
 const ShowCommitsScreen = ({navigation}) => {
 
     const repository = 'git-mobile';
-    console.log(`The param from the navigation screen is ${repository}`);
     const [result , setResult] = useState(null);
 
     const getCommits = async (repository) => {
         const commits = await githubCommit.get(`/${repository}/commits?sha=commits`);
         setResult(commits);
-        console.log(commits.data[0]);
     }
 
     useEffect(() => {
