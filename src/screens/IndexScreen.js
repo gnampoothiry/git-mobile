@@ -22,7 +22,7 @@ const IndexScreen = ({navigation}) => {
                             return(
                                 <TouchableOpacity 
                                     onPress={()=>{
-                                        //navigation.navigate('ResultShowDetail' , {id:item.id})
+                                        navigation.navigate('ShowCommits' , {repository:item.name})
                                         console.log('clicked')
                                     }}
                                 >

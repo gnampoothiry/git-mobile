@@ -2,12 +2,12 @@ import React from 'react';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
 import IndexScreen from './src/screens/IndexScreen';
-import ShowRepositoriesScreen from './src/screens/ShowRepositoriesScreen'
+import ShowCommitsScreen from './src/screens/ShowCommitsScreen'
 
 
 const navigator = createStackNavigator({
   Index: IndexScreen,
-  ShowRepository: ShowRepositoriesScreen
+  ShowCommits: ShowCommitsScreen
 },{
   initialRouteName: 'Index',
   defaultNavigationOptions:{
