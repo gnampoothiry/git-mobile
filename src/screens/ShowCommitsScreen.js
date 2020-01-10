@@ -32,7 +32,7 @@ const ShowCommitsScreen = ({navigation}) => {
                 renderItem={({item}) => {
                     return(
                         <ListItem
-                            containerStyle={{backgroundColor:'silver' , borderRadius:10 , borderColor:'red'}}
+                            containerStyle={{backgroundColor:'silver' , borderRadius:10 , borderColor:'black', borderWidth:2 ,marginHorizontal:5}}
                             contentContainerStyle
                             title={item.commit.author.name}
                             titleStyle={{ color: 'black', fontWeight: 'bold' }}
